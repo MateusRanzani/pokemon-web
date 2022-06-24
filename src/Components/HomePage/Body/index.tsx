@@ -1,28 +1,13 @@
 import { useEffect, useState } from "react";
-import { HeaderDiv, BodyDiv } from "./style";
-import { PokemonsApiInterface } from "../../../Interfaces/PokemonsApiInterface";
 import { PokemonDetailsInterface } from "../../../Interfaces/PokemonDetailsInterface";
-import Body from "../Body";
+import { Title, PokemonsDiv, Image } from "./styles";
 
 export function Header() {
-  let [listPokemonsAPI, setListPokemonsAPI] = useState<PokemonsApiInterface>(
-    {} as PokemonsApiInterface
-  );
-
   let [pokemonDetails, setPokemonDetails] = useState<PokemonDetailsInterface[]>(
     []
   );
 
   const axios = require("axios").default;
-
-  const getListPokemonsApi = () => {
-    axios
-      .get("https://pokeapi.co/api/v2/pokemon")
-      .then((res: any) => {
-        setListPokemonsAPI(res.data);
-      })
-      .catch((error: any) => console.log(error));
-  };
 
   const getPokemonDetails = () => {
     let pokemonsHomePage: PokemonDetailsInterface[] = [];
@@ -62,15 +47,26 @@ export function Header() {
   };
 
   useEffect(() => {
-    getListPokemonsApi();
     getPokemonDetails();
   }, []);
 
   return (
     <>
-      <Body/>
-      <HeaderDiv/>
-      <BodyDiv/>
+        <div>
+        <Title>SELECT YOUR FIRST POKEMON</Title>
+
+        <PokemonsDiv>
+            {!isEmptyObj(pokemonDetails)
+            ? pokemonDetails.map((pokemon) => (
+                <div>
+                    <Image src={pokemon.sprites.front_default} alt="pokemon" />
+                </div>
+                ))
+            : ""}
+        </PokemonsDiv>
+        </div>
+
+   
     </>
   );
 }

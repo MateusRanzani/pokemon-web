@@ -1,11 +1,17 @@
-import Body from "./Components/HomePage/Body";
-import Header from "./Components/HomePage/Header";
+
+import Page from "./Components/Homepage/Content/Page";
 import { GlobalStyle } from "./Styles/global";
+import {Routes , Route, Link} from "react-router-dom"
+import PageTwo from "./Components/PageTwo/Page";
 
 export function App() {
   return (
     <>
-    <Header/>
+    <Routes>
+      <Route  path="" element={<Page/>}/>
+      <Route  path="/pagetwo" element={<PageTwo/>}/>
+    </Routes>
+    
     <GlobalStyle />
     </>
   );

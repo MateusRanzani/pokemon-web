@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { PokemonsApiInterface } from "../../../Interfaces/PokemonsApiInterface";
 import { PokemonDetailsInterface } from "../../../Interfaces/PokemonDetailsInterface";
 import { TotalDiv } from "./style";
+import Footer from "../Footer";
 
 export function Body() {
   let [listPokemonsAPI, setListPokemonsAPI] = useState<PokemonsApiInterface>(
@@ -41,6 +42,7 @@ export function Body() {
   return (
     <>
       <TotalDiv>
+      <Footer/>
       </TotalDiv>
     </>
   );

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    width: 35vw;
+    width: 27vw;
     height: 15vh;
     background-color: #D9D9D9;
     position: absolute;
@@ -32,4 +32,27 @@ export const ImgBag = styled.img`
     margin-right: auto;
     display: block;
 
+`;
+
+export const Boton = styled.div`
+    width:100%;
+    height:100%;
+    display:flex;
+    position:relative;
+    
+`;
+
+export const ImgPokeball = styled.img`
+    position:absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left : 1.5vw;
+`;
+
+export const ImgPokedex = styled.img`
+    position:absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right : 1.5vw;
 `;

@@ -12,18 +12,27 @@ export function Footer() {
     <>
       <Container>
         <BoxCircle>
-          <a href="">
-            <ImgBag src="/assets/thisbag.png" alt="Bag" width={100} />
-          </a>
+          <ImgBag
+            src="/assets/thisbag.png"
+            alt="Bag"
+            width={100}
+            onClick={() => console.log("teste")}
+          />
         </BoxCircle>
 
         <Boton>
-          <a href="">
-            <ImgPokeball src="/assets/Pokeboll.png" alt="Pokeboll" width={60} />
-          </a>
-          <a href="">
-            <ImgPokedex src="/assets/Pokedex.gif" alt="Pokeboll" width={80} />
-          </a>
+          <ImgPokeball
+            src="/assets/Pokeboll.png"
+            alt="Pokeboll"
+            width={60}
+            onClick={() => console.log("teste")}
+          />
+          <ImgPokedex
+            src="/assets/Pokedex.gif"
+            alt="Pokedex"
+            width={80}
+            onClick={() => console.log("teste")}
+          />
         </Boton>
       </Container>
     </>

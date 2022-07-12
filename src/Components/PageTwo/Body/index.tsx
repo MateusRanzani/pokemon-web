@@ -1,30 +1,11 @@
-import { useEffect, useState } from "react";
-import { PokemonsApiInterface } from "../../../Interfaces/PokemonsApiInterface";
-import { PokemonDetailsInterface } from "../../../Interfaces/PokemonDetailsInterface";
+import { useContext,} from "react";
 import { TotalDiv } from "./style";
 import Footer from "../Footer";
+import { PokemonsContext } from "../../../PokemonsContext";
+import { PokemonsApiInterface } from "../../../Interfaces/PokemonsApiInterface";
 
 export function Body() {
-  let [listPokemonsAPI, setListPokemonsAPI] = useState<PokemonsApiInterface>(
-    {} as PokemonsApiInterface
-  );
-
-  let [pokemonDetails, setPokemonDetails] = useState<PokemonDetailsInterface[]>(
-    []
-  );
-
-  const axios = require("axios").default;
-
-  const getListPokemonsApi = () => {
-    axios
-      .get("https://pokeapi.co/api/v2/pokemon")
-      .then((res: any) => {
-        setListPokemonsAPI(res.data);
-      })
-      .catch((error: any) => console.log(error));
-  };
-
-
+  const allPokemonsApi = useContext(PokemonsContext);
   const isEmptyObj = (obj: any) => {
     for (var prop in obj) {
       if (obj.hasOwnProperty(prop)) {
@@ -35,14 +16,10 @@ export function Body() {
     return true;
   };
 
-  useEffect(() => {
-    getListPokemonsApi();
-  }, []);
-
   return (
     <>
       <TotalDiv>
-      <Footer/>
+        <Footer />
       </TotalDiv>
     </>
   );

@@ -13,12 +13,15 @@ export function Footer() {
       <Container>
         <BoxCircle>
           <ImgBag
-            src="/assets/thisbag.png"
-            alt="Bag"
-            width={100}
-            onClick={() => console.log("teste")}
+          style={{cursor:"pointer"}}
+          src="/assets/thisbag.png"
+          alt="Bag"
+          width={80}
+          height={80}
+          onClick={() => console.log("teste")}
           />
         </BoxCircle>
+
 
         <Boton>
           <ImgPokeball

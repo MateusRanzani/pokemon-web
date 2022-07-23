@@ -24,7 +24,6 @@ export const BoxCircle = styled.div`
   right: 0;
   margin: auto;
   display: flex;
-  z-index: -1;
 `;
 
 export const ImgBag = styled.img`
@@ -33,21 +32,24 @@ export const ImgBag = styled.img`
   margin-left: auto;
   margin-right: auto;
   display: block;
-`;
+  z-index: 1;
+  cursor: pointer !important;
+  `;
 
 export const Boton = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
   position: relative;
-`;
+  `;
 
 export const ImgPokeball = styled.img`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   margin-left: 1.5vw;
-`;
+  cursor: pointer;
+  `;
 
 export const ImgPokedex = styled.img`
   position: absolute;
@@ -55,4 +57,5 @@ export const ImgPokedex = styled.img`
   top: 50%;
   transform: translateY(-50%);
   margin-right: 1.5vw;
-`;
+  cursor: pointer;
+  `;

@@ -27,24 +27,24 @@ export function Header() {
 
   const axios = require("axios").default;
 
-  const getPokemonDetails = () => {
+  const getPokemonDetails = async () => {
     let pokemonsHomePage: PokemonDetailsInterface[] = [];
 
-    axios
+    await axios
       .get("https://pokeapi.co/api/v2/pokemon/1/")
       .then((res: any) => {
         pokemonsHomePage.push(res.data);
       })
       .catch((error: any) => console.log(error));
 
-    axios
+    await axios
       .get("https://pokeapi.co/api/v2/pokemon/4/")
       .then((res: any) => {
         pokemonsHomePage.push(res.data);
       })
       .catch((error: any) => console.log(error));
 
-    axios
+    await axios
       .get("https://pokeapi.co/api/v2/pokemon/7/")
       .then((res: any) => {
         pokemonsHomePage.push(res.data);

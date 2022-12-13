@@ -10,6 +10,8 @@ import {
   PokemonDetail,
   ContentModal,
   Button,
+  HeaderDivRedLine,
+  BodyDivBlackLine,
 } from "./styles";
 import Modal from "react-modal";
 import { Link } from "react-router-dom";
@@ -79,29 +81,36 @@ export function Header() {
 
   return (
     <>
-      
       <div>
-
-        <Title>SELECT YOUR FIRST POKEMON</Title>
-
-        <PokemonsDiv>
-          {!isEmptyObj(pokemonDetails)
-            ? pokemonDetails.map((pokemon) => (
-                <div>
-                  <a
-                    onClick={() => {
-                      setSelectedPokemon(pokemon);
-                      setOpenModalSelectedPokemon(true);
-                    }}
-                  >
-                    <Image src={pokemon.sprites.front_default} alt="pokemon" />
-                  </a>
-                </div>
-              ))
-            : ""}
-        </PokemonsDiv>
-
+        <HeaderDivRedLine>
+          <Title>
+            SELECT YOUR FIRST <br />{" "}
+            <span style={{ fontSize: "5rem" }}> POKEMON!</span>
+          </Title>
+        </HeaderDivRedLine>
         
+        <BodyDivBlackLine>
+          <PokemonsDiv>
+            {!isEmptyObj(pokemonDetails)
+              ? pokemonDetails.map((pokemon) => (
+                  <div>
+                    <a
+                      onClick={() => {
+                        setSelectedPokemon(pokemon);
+                        setOpenModalSelectedPokemon(true);
+                      }}
+                    >
+                      <Image
+                        src={pokemon.sprites.front_default}
+                        alt="pokemon"
+                      />
+                    </a>
+                  </div>
+                ))
+              : ""}
+          </PokemonsDiv>
+        </BodyDivBlackLine>
+
         {!isEmptyObj(selectedpokemon) ? (
           <Modal
             isOpen={openModalSelectedPokemon}
@@ -151,8 +160,6 @@ export function Header() {
           ""
         )}
       </div>
-      
-
     </>
   );
 }

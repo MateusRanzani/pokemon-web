@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { PokemonsApiInterface } from "../../../../Interfaces/PokemonsApiInterface";
 import { PokemonDetailsInterface } from "../../../../Interfaces/PokemonDetailsInterface";
 import Body from "../Body";
-import { BodyDiv, HeaderDiv } from "./style";
 
 export function Page() {
   let [listPokemonsAPI, setListPokemonsAPI] = useState<PokemonsApiInterface>(
@@ -69,8 +68,6 @@ export function Page() {
   return (
     <>
       <Body />
-      <HeaderDiv />
-      <BodyDiv />
     </>
   );
 }

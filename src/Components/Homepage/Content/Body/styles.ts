@@ -1,25 +1,39 @@
 import styled from "styled-components";
 
+export const HeaderDivRedLine = styled.div `
+    width: 100%;
+    height: 45vh;
+    max-height: 30rem;
+    background-color: red;
+`;
+
+export const BodyDivBlackLine = styled.div `
+position:relative;
+    width: 100%;
+    height: 30vh;
+    max-height: 15rem;
+    background-color: black;
+`;
+
+
 export const PokemonsDiv = styled.div`
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
+  top: -1.5rem;
   left: 0;
   right: 0;
-  top: 35%;
-  margin-left: auto;
-  margin-right: auto;
-  height: 50vh;
 `;
+
 
 export const Title = styled.p`
   position: absolute;
   left: 0;
   right: 0;
   top: 1%;
-  padding: 6rem;
+  padding: 4rem;
   color: white;
   text-align: center;
   font-family: Poppins;

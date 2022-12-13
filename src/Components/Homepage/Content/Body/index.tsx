@@ -80,7 +80,7 @@ export function Header() {
   return (
     <>
       
-      <div style={{ }}>
+      <div>
 
         <Title>SELECT YOUR FIRST POKEMON</Title>
 

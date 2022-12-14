@@ -5,13 +5,14 @@ import {
   Title,
   PokemonsDiv,
   Image,
-  Img,
+  ImgModal,
   PokemonName,
   PokemonDetail,
   ContentModal,
   Button,
   HeaderDivRedLine,
   BodyDivBlackLine,
+  NameOfPokemon,
 } from "./styles";
 import Modal from "react-modal";
 import { Link } from "react-router-dom";
@@ -24,6 +25,8 @@ export function Header() {
   let [selectedpokemon, setSelectedPokemon] = useState<PokemonDetailsInterface>(
     {} as PokemonDetailsInterface
   );
+
+  let [hoverPokemon, setHoverPokemon] = useState("");
 
   let [openModalSelectedPokemon, setOpenModalSelectedPokemon] = useState(false);
 
@@ -88,12 +91,15 @@ export function Header() {
             <span style={{ fontSize: "6vw" }}> POKEMON!</span>
           </Title>
         </HeaderDivRedLine>
-        
+
         <BodyDivBlackLine>
           <PokemonsDiv>
             {!isEmptyObj(pokemonDetails)
               ? pokemonDetails.map((pokemon) => (
-                  <div>
+                  <div
+                    onMouseEnter={() => setHoverPokemon(pokemon.name)}
+                    onMouseLeave={() => setHoverPokemon("")}
+                  >
                     <a
                       onClick={() => {
                         setSelectedPokemon(pokemon);
@@ -110,6 +116,7 @@ export function Header() {
               : ""}
           </PokemonsDiv>
         </BodyDivBlackLine>
+        <NameOfPokemon>{hoverPokemon.toLocaleUpperCase()}</NameOfPokemon>
 
         {!isEmptyObj(selectedpokemon) ? (
           <Modal
@@ -123,7 +130,7 @@ export function Header() {
             </a>
             <PokemonName>{selectedpokemon.name.toUpperCase()}</PokemonName>
             <ContentModal>
-              <Img
+              <ImgModal
                 src={
                   !isEmptyObj(selectedpokemon)
                     ? selectedpokemon.sprites.front_default

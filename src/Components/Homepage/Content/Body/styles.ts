@@ -37,7 +37,7 @@ export const PokemonsDiv = styled.div`
   display: flex;
 `;
 
-export const Title = styled.p`
+export const Title = styled.h1`
   @media only screen and (max-width: 699px) {
     display: none;
   }
@@ -53,20 +53,15 @@ export const Image = styled.img`
   @media only screen and (max-width: 699px) {
     display: none;
   }
-  width: 30vw;
-  max-width: 18rem;
+  width: 20vw;
   transition: width 0.15s;
-  margin-top: -1.5rem;
-  -webkit-filter: drop-shadow(2px 2px 2px #222);
-  filter: drop-shadow(2px 2px 2px #222);
 
   &:hover {
-    margin-top: -2.5rem;
     width: 25rem;
   }
 `;
 
-export const Img = styled.img`
+export const ImgModal = styled.img`
   @media only screen and (max-width: 699px) {
     display: none;
   }
@@ -122,4 +117,21 @@ export const Button = styled.button`
   &:hover {
     filter: brightness(0.9);
   }
+`;
+
+export const NameOfPokemon = styled.h2`
+  @media only screen and (max-width: 699px) {
+    display: none;
+  }
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+
+  font-size: 3rem;
+  font-family: Poppins;
+  font-weight: 800;
+  text-align: center;
 `;

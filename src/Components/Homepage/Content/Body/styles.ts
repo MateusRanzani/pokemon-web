@@ -4,22 +4,29 @@ export const HeaderDivRedLine = styled.div`
   @media only screen and (max-width: 699px) {
     display: none;
   }
+
   @media only screen and (min-width: 700px) {
   }
 
   width: 100%;
   min-height: 45vh;
   background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const BodyDivBlackLine = styled.div`
   @media only screen and (max-width: 699px) {
     display: none;
   }
-  position: relative;
   width: 100%;
-  height: 30vh;
-  max-height: 15rem;
+  min-height: 30vh;
+  max-height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   background-color: black;
 `;
 
@@ -27,14 +34,7 @@ export const PokemonsDiv = styled.div`
   @media only screen and (max-width: 699px) {
     display: none;
   }
-  position: absolute;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  top: -1.5rem;
-  left: 0;
-  right: 0;
 `;
 
 export const Title = styled.p`
@@ -53,7 +53,8 @@ export const Image = styled.img`
   @media only screen and (max-width: 699px) {
     display: none;
   }
-  width: 20rem;
+  width: 30vw;
+  max-width: 18rem;
   transition: width 0.15s;
   margin-top: -1.5rem;
   -webkit-filter: drop-shadow(2px 2px 2px #222);

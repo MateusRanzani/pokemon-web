@@ -85,7 +85,7 @@ export function Header() {
         <HeaderDivRedLine>
           <Title>
             SELECT YOUR FIRST <br />{" "}
-            <span style={{ fontSize: "5rem" }}> POKEMON!</span>
+            <span style={{ fontSize: "6vw" }}> POKEMON!</span>
           </Title>
         </HeaderDivRedLine>
         

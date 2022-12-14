@@ -1,22 +1,32 @@
 import styled from "styled-components";
 
-export const HeaderDivRedLine = styled.div `
-    width: 100%;
-    height: 45vh;
-    max-height: 30rem;
-    background-color: red;
+export const HeaderDivRedLine = styled.div`
+  @media only screen and (max-width: 699px) {
+    display: none;
+  }
+  @media only screen and (min-width: 700px) {
+  }
+
+  width: 100%;
+  min-height: 45vh;
+  background-color: red;
 `;
 
-export const BodyDivBlackLine = styled.div `
-position:relative;
-    width: 100%;
-    height: 30vh;
-    max-height: 15rem;
-    background-color: black;
+export const BodyDivBlackLine = styled.div`
+  @media only screen and (max-width: 699px) {
+    display: none;
+  }
+  position: relative;
+  width: 100%;
+  height: 30vh;
+  max-height: 15rem;
+  background-color: black;
 `;
-
 
 export const PokemonsDiv = styled.div`
+  @media only screen and (max-width: 699px) {
+    display: none;
+  }
   position: absolute;
   display: flex;
   justify-content: center;
@@ -27,21 +37,22 @@ export const PokemonsDiv = styled.div`
   right: 0;
 `;
 
-
 export const Title = styled.p`
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 1%;
-  padding: 4rem;
+  @media only screen and (max-width: 699px) {
+    display: none;
+  }
+  z-index: 10;
   color: white;
   text-align: center;
   font-family: Poppins;
   font-weight: 800;
-  font-size: 4rem;
+  font-size: 5vw;
 `;
 
 export const Image = styled.img`
+  @media only screen and (max-width: 699px) {
+    display: none;
+  }
   width: 20rem;
   transition: width 0.15s;
   margin-top: -1.5rem;
@@ -55,10 +66,16 @@ export const Image = styled.img`
 `;
 
 export const Img = styled.img`
+  @media only screen and (max-width: 699px) {
+    display: none;
+  }
   width: 20rem;
 `;
 
 export const PokemonName = styled.p`
+  @media only screen and (max-width: 699px) {
+    display: none;
+  }
   font-size: 1.8rem;
   font-family: Poppins;
   font-weight: 800;
@@ -66,6 +83,9 @@ export const PokemonName = styled.p`
 `;
 
 export const PokemonDetail = styled.p`
+  @media only screen and (max-width: 699px) {
+    display: none;
+  }
   width: 20vw;
   font-size: 1.5rem;
   margin-top: -3rem;
@@ -75,6 +95,9 @@ export const PokemonDetail = styled.p`
 `;
 
 export const ContentModal = styled.p`
+  @media only screen and (max-width: 699px) {
+    display: none;
+  }
   display: flex;
   align-items: center;
   justify-content: center;
@@ -82,6 +105,9 @@ export const ContentModal = styled.p`
 `;
 
 export const Button = styled.button`
+  @media only screen and (max-width: 699px) {
+    display: none;
+  }
   margin: 0.5rem;
   padding: 1rem;
   width: auto;
@@ -96,4 +122,3 @@ export const Button = styled.button`
     filter: brightness(0.9);
   }
 `;
-
